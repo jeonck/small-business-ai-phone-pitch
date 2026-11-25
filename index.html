@@ -270,11 +270,11 @@ footer .sig{font-weight:800;color:var(--ink)}
 <section id="sequence"><div class="wrap">
   <p class="kicker" data-i18n="seq_kicker">Under the hood</p>
   <h2 data-i18n="seq_h2">One call, start to finish — the sequence diagram</h2>
-  <p class="lede" data-i18n="seq_lede">The same catering call from the demo above, traced message by message: the caller, the phone network (Twilio), the AI agent, your shop info sheet, ChatGPT, and you.</p>
+  <p class="lede" data-i18n="seq_lede">The same catering call from the demo above, traced message by message: the caller, the voice agent platform (Vapi / Retell), the AI agent, your shop info sheet, ChatGPT, and you.</p>
   <div class="seq-card">
     <div class="actors" aria-label="Participants">
       <span class="actor" data-i18n="a_caller">Caller</span><span class="arr">→</span>
-      <span class="actor">Twilio</span><span class="arr">→</span>
+      <span class="actor">Vapi / Retell</span><span class="arr">→</span>
       <span class="actor hot" data-i18n="a_agent">AI agent</span><span class="arr">→</span>
       <span class="actor" data-i18n="a_info">Shop info sheet</span><span class="arr">→</span>
       <span class="actor">ChatGPT</span><span class="arr">→</span>
@@ -282,19 +282,19 @@ footer .sig{font-weight:800;color:var(--ink)}
     </div>
     <div class="seq-phase">
       <h3 data-i18n="seq_ph1">On the call</h3>
-      <div class="seq-msg"><span class="seq-n">1</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_caller">Caller</span><span class="arr">→</span>Twilio</div><p data-i18n="seq_m1">Dials the shop&rsquo;s number — you&rsquo;re with a customer and can&rsquo;t pick up</p></div></div>
-      <div class="seq-msg"><span class="seq-n">2</span><div class="seq-body"><div class="seq-route">Twilio<span class="arr">→</span><span data-i18n="a_agent">AI agent</span></div><p data-i18n="seq_m2">Hands over the call together with the caller&rsquo;s number (caller ID)</p></div></div>
+      <div class="seq-msg"><span class="seq-n">1</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_caller">Caller</span><span class="arr">→</span>Vapi / Retell</div><p data-i18n="seq_m1">Dials the shop&rsquo;s number — you&rsquo;re with a customer and can&rsquo;t pick up</p></div></div>
+      <div class="seq-msg"><span class="seq-n">2</span><div class="seq-body"><div class="seq-route">Vapi / Retell<span class="arr">→</span><span data-i18n="a_agent">AI agent</span></div><p data-i18n="seq_m2">Hands over the call together with the caller&rsquo;s number (caller ID)</p></div></div>
       <div class="seq-msg"><span class="seq-n">3</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_agent">AI agent</span><span class="arr">→</span><span data-i18n="a_info">Shop info sheet</span></div><p data-i18n="seq_m3">Loads your approved facts before speaking: hours, menu, catering rules</p></div></div>
       <div class="seq-msg"><span class="seq-n">4</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_info">Shop info sheet</span><span class="arr">→</span><span data-i18n="a_agent">AI agent</span></div><p data-i18n="seq_m4">Returns only what&rsquo;s written there — the AI never invents prices or policies</p></div></div>
       <div class="seq-msg"><span class="seq-n">5</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_agent">AI agent</span><span class="arr">→</span><span data-i18n="a_caller">Caller</span></div><p data-i18n="seq_m5">Greets the caller in their own language — English, Spanish, or Korean</p></div></div>
       <div class="seq-msg"><span class="seq-n">6</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_caller">Caller</span><span class="arr">→</span><span data-i18n="a_agent">AI agent</span></div><p data-i18n="seq_m6">&ldquo;I need lunch catering for 30 people this Saturday. Can you do that?&rdquo;</p></div></div>
       <div class="seq-msg"><span class="seq-n">7</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_agent">AI agent</span><span class="arr">→</span><span data-i18n="a_caller">Caller</span></div><p data-i18n="seq_m7">Takes the details and promises: &ldquo;The owner will confirm the menu and price today.&rdquo;</p></div></div>
       <div class="seq-msg"><span class="seq-n">8</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_caller">Caller</span><span class="arr">→</span><span data-i18n="a_agent">AI agent</span></div><p data-i18n="seq_m8">Confirms their name and the best callback number</p></div></div>
-      <div class="seq-msg"><span class="seq-n">9</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_agent">AI agent</span><span class="arr">→</span>Twilio</div><p data-i18n="seq_m9">Call ends — the recording and full transcript are saved</p></div></div>
+      <div class="seq-msg"><span class="seq-n">9</span><div class="seq-body"><div class="seq-route"><span data-i18n="a_agent">AI agent</span><span class="arr">→</span>Vapi / Retell</div><p data-i18n="seq_m9">Call ends — the recording and full transcript are saved</p></div></div>
     </div>
     <div class="seq-phase">
       <h3 data-i18n="seq_ph2">Right after the call</h3>
-      <div class="seq-msg"><span class="seq-n">10</span><div class="seq-body"><div class="seq-route">Twilio<span class="arr">→</span>ChatGPT</div><p data-i18n="seq_m10">Sends the transcript and the caller&rsquo;s number to the summary workflow</p></div></div>
+      <div class="seq-msg"><span class="seq-n">10</span><div class="seq-body"><div class="seq-route">Vapi / Retell<span class="arr">→</span>ChatGPT</div><p data-i18n="seq_m10">Sends the transcript and the caller&rsquo;s number to the summary workflow</p></div></div>
       <div class="seq-msg"><span class="seq-n">11</span><div class="seq-body"><div class="seq-route">ChatGPT<span class="arr">↺</span></div><p data-i18n="seq_m11">Writes the two-line summary and ranks the urgency — this one: &ldquo;Call back today&rdquo;</p></div></div>
       <div class="seq-msg"><span class="seq-n">12</span><div class="seq-body"><div class="seq-route">ChatGPT<span class="arr">→</span><span data-i18n="a_owner">Owner (you)</span></div><p data-i18n="seq_m12">Texts you the summary and the callback list — within about a minute</p></div></div>
     </div>
@@ -471,7 +471,7 @@ en: {
   s3_tag: "Text in ~1 minute",
   seq_kicker: "Under the hood",
   seq_h2: "One call, start to finish — the sequence diagram",
-  seq_lede: "The same catering call from the demo above, traced message by message: the caller, the phone network (Twilio), the AI agent, your shop info sheet, ChatGPT, and you.",
+  seq_lede: "The same catering call from the demo above, traced message by message: the caller, the voice agent platform (Vapi / Retell), the AI agent, your shop info sheet, ChatGPT, and you.",
   a_caller: "Caller",
   a_agent: "AI agent",
   a_info: "Shop info sheet",
@@ -620,7 +620,7 @@ ko: {
   s3_tag: "약 1분 안에 문자 도착",
   seq_kicker: "내부 동작 방식",
   seq_h2: "통화 한 건, 처음부터 끝까지 — 시퀀스 다이어그램",
-  seq_lede: "위 데모의 케이터링 통화를 메시지 단위로 따라가 봅니다: 발신자, 전화망(Twilio), AI 에이전트, 가게 정보 시트, ChatGPT, 그리고 사장님입니다.",
+  seq_lede: "위 데모의 케이터링 통화를 메시지 단위로 따라가 봅니다: 발신자, 음성 에이전트 플랫폼(Vapi / Retell), AI 에이전트, 가게 정보 시트, ChatGPT, 그리고 사장님입니다.",
   a_caller: "발신자",
   a_agent: "AI 에이전트",
   a_info: "가게 정보 시트",
